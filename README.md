@@ -11,6 +11,7 @@ Scenario files should be placed in the /scenario folder.
 Output .csv (detections) and .gif (simulation) are generated in the /output folder.
 
 In mainDemoGhosting.m:
+
     1. Set EXPORT_CSV flag
     2. Set scenarioHandle to <scenario>.m
     3. Set filename to <scenario>.m (This has to match scenarioHandle)
