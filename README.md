@@ -1,8 +1,15 @@
-# demoMatlabGhosting
-Matlab demonstration of ghost detections in sumilated scenarios (2021a)
+# demoMatlabGhosting - Ghost detection Simulator
+Matlab demonstration of ghost detections in sumilated scenarios. This repository is based on:
 
-This repository is based on https://de.mathworks.com/help/driving/ug/radar-ghost-multipath.html
-It therefore requires the 'Automated Driving Toolbox' and the 'Radar Toolbox'. 
+https://de.mathworks.com/help/driving/ug/radar-ghost-multipath.html 
+
+It therefore requires the 'Automated Driving Toolbox' and the 'Radar Toolbox'. This demo was developed under MatLab version R2021a.
+
+
+Ghost detections appear when radar-waves are refelected between a side-barrier or guardrail and a traffic-object such as a car. Ghost detections are colored based on their bounce-index:
+* Red: Direct reflexion
+* Yellow: 1-2 reflexion (e.g. emitter -> car -> guardrail -> receiver)
+* Magenta: 1-2-1 reflection (e.g. emitter -> guardrail -> car -> guardrail -> receiver)
 
 The sensor configuration consists of 5R1C and is implemented scenario independent. 
 
