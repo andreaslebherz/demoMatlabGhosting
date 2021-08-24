@@ -15,10 +15,10 @@ EXPORT_CSV = true;
 addpath('scenarios');
 
 % handle for exported driving scenario
-% scenarioHandle = @demo_ghost_detections;
-scenarioHandle = @demo_ghost_detections_2;
+scenarioHandle = @demo_ghost_detections;
+% scenarioHandle = @demo_ghost_detections_2;
 % scenarioHandle = @demo_ghost_highway_ramp;
-filename = 'demo_ghost_detections_2';
+filename = 'demo_ghost_detections';
 
 % create scenario-obj, ego-vehicle motion and sensor setup
 [scenario, egoVehicle, sensors] = helperCreateScenario(scenarioHandle);
