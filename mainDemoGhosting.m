@@ -38,6 +38,11 @@ display.FollowActorID = 2;
 gifWriter = helperGIFWriter('Figure',display.Figure,...
     'RecordGIF',true);
 
+% Create output folder if it does not exist
+if ~exist('output', 'dir')
+   mkdir('output')
+end
+
 %% Running scenario
 % Reset the random number generator for repeatable results
 seed = 2021;
