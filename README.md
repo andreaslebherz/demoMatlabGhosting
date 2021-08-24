@@ -1,5 +1,5 @@
 # demoMatlabGhosting
-Matlab demonstration of ghost detections in sumilated scenarios
+Matlab demonstration of ghost detections in sumilated scenarios (2021a)
 
 This repository is based on https://de.mathworks.com/help/driving/ug/radar-ghost-multipath.html
 It therefore requires the 'Automated Driving Toolbox' and the 'Radar Toolbox'. 
