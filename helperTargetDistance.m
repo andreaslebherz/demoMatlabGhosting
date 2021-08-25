@@ -1,10 +1,10 @@
-function dist = helperExtendedTargetDistance(track,truth)
+function dist = helperTargetDistance(track,truth)
 % This function computes the distance between track and a truth.
 
 % Copyright 2019-2020 The MathWorks, Inc.
 
 % Errors in each aspect
-[posError,velError,dimError,yawError] =  helperExtendedTargetError(track,truth);
+[posError,velError,dimError,yawError] =  helperTargetError(track,truth);
 
 % For multiObjectTracker, add a constant penalty for not estimating yaw
 % and dimensions

@@ -14,13 +14,13 @@ EXPORT_CSV = true;
 % Create the scenario
 addpath('scenarios');
 
-% handle for exported driving scenario
+% Handle for exported driving scenario
 scenarioHandle = @demo_ghost_detections;
 % scenarioHandle = @demo_ghost_detections_2;
 % scenarioHandle = @demo_ghost_highway_ramp;
 filename = 'demo_ghost_detections';
 
-% create scenario-obj, ego-vehicle motion and sensor setup
+% Create scenario-obj, ego-vehicle motion and sensor setup
 [scenario, egoVehicle, sensors] = helperCreateScenario(scenarioHandle);
 
 numRadar = sum(cellfun(@(s) isa(s, 'radarDataGenerator'), sensors, 'UniformOutput', true));
@@ -29,7 +29,7 @@ assert(id_ego==egoVehicle.ActorID, sprintf('Ego vehicle needs ID: %d.', id_ego))
 assert(n_radar==numRadar, sprintf('Setup needs a number of sensors: %d.', n_radar));
 
 % Create the display object
-display = helperExtendedTargetTrackingDisplay;
+display = helperTargetTrackingDisplay;
 % Set this to vehicle ID you want to follow
 display.FollowActorID = 2;
 
@@ -65,7 +65,7 @@ while advance(scenario) && ishghandle(display.Figure)
 
     % Collect detections from the ego vehicle sensors
     [detections,isValidTime] = helperDetect(sensors, egoVehicle, time);
-   
+
     % Update the tracker if there are new detections
     if any(isValidTime)
         % Display detections

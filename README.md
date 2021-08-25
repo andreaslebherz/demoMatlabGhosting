@@ -22,5 +22,6 @@ In mainDemoGhosting.m:
     1. Set EXPORT_CSV flag
     2. Set scenarioHandle to <scenario>.m
     3. Set filename to <scenario>.m (This has to match scenarioHandle)
-    4. Run
+    4. Set display.FollowActorID for .gif visualization
+    5. Run
     

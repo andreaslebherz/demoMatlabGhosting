@@ -1,5 +1,5 @@
-classdef helperExtendedTargetTrackingDisplay < matlab.System
-    % This is a helper class for Extended Object Tracking example to
+classdef helperTargetTrackingDisplay < matlab.System
+    % This is a helper class for Object Tracking example to
     % display tracks, detections and ground truth. It may be removed or
     % modified in a future release.
     
@@ -16,7 +16,7 @@ classdef helperExtendedTargetTrackingDisplay < matlab.System
     end
     
     methods
-        function obj = helperExtendedTargetTrackingDisplay(varargin)
+        function obj = helperTargetTrackingDisplay(varargin)
             setProperties(obj,nargin,varargin{:});
             % Make a figure
             hFigure = figure('Position', [0, 0, 1200, 640], 'Name', 'Demonstration Ghost-Detections');
@@ -34,7 +34,7 @@ classdef helperExtendedTargetTrackingDisplay < matlab.System
         function stepImpl(obj, egoVehicle, ~,  detections, varargin)
             bep = obj.BirdsEyePlots;
             % Update plots
-            helperUpdateDisplayExtended(bep, egoVehicle, detections, varargin{:});
+            helperUpdateDisplay(bep, egoVehicle, detections, varargin{:});
             
             % Follow actor ID provided in actor ID
             if ~isempty(obj.FollowActorID)
@@ -128,12 +128,12 @@ function BEP = createBEPPanel(obj, hFigure, position, frontBackLim, sensors, tit
     end
 end
 
-function helperUpdateDisplayExtended(BEPS, egoCar, detections, varargin)
+function helperUpdateDisplay(BEPS, egoCar, detections, varargin)
 %%% 
-% helperUpdateDisplayExtended  Helper to update the display
+% helperUpdateDisplay  Helper to update the display
 % 
 % This function updates the bird's-eye plot with road boundaries,
-% detections, and extended tracks.
+% detections, and  tracks.
     for b = 1:numel(BEPS)
         BEP = BEPS{b};
         helperUpdateDisplayNonTracks(BEP, egoCar, detections, varargin{:});
